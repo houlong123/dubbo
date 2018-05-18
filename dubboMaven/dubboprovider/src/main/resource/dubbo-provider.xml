@@ -18,4 +18,12 @@
     <bean id="userService" class="com.houlong.dubbo.service.impl.UserServiceImpl"/>
 
     <dubbo:service interface="com.houlong.dubbo.service.OrderService" class="com.houlong.dubbo.service.impl.OrderServiceImpl"/>
+
+
+    <bean id="helloService" class="com.houlong.dubbo.service.impl.HelloServiceImpl" />
+    <bean class="com.houlong.dubbo.rpc.RemoteServiceBean" init-method="init">
+        <property name="serviceName" value="com.houlong.dubbo.service.HelloService"/>
+        <property name="serviceImpl" ref="helloService"/>
+    </bean>
+
 </beans>

@@ -1,5 +1,6 @@
 package com.houlong.dubbo;
 
+import com.houlong.dubbo.service.HelloService;
 import com.houlong.dubbo.service.OrderService;
 import com.houlong.dubbo.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -62,6 +63,13 @@ public class Consumer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+
+
+        //  模拟RPC调用
+        HelloService helloService = (HelloService) context.getBean("helloService");
+        System.out.println(helloService.sayHello("侯龙"));
+
 
     }
 }

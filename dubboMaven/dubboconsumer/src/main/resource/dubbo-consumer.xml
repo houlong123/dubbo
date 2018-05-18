@@ -12,4 +12,8 @@
     <dubbo:reference id="userService" interface="com.houlong.dubbo.service.UserService"/>
     <dubbo:reference id="orderService" interface="com.houlong.dubbo.service.OrderService"/>
 
+    <bean id="helloService" class="com.houlong.dubbo.rpc.proxy.ServiceProxyBeanFactory" factory-method="getService">
+        <constructor-arg value="com.houlong.dubbo.service.HelloService" />
+    </bean>
+
 </beans>
